@@ -5,366 +5,398 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Uzi">
-    <link rel="icon" href="lib/imgs/fidget-spinner.png" type="image/x-icon">
-    <title>Welcome To Uzi Zone</title>
+    <link rel="icon" href="assets/img/fidget-spinner.png" type="image/x-icon">
+    <title>Rachmat Fauzi | .NET Developer</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <style>
-        body {
-            background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #0f0f0f);
-            color: #f5f5f5;
-            font-family: 'Segoe UI', sans-serif;
-            transition: background 0.5s, color 0.5s;
-        }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-        body.light-mode {
-            background: linear-gradient(135deg, #f8f9fa, #ffffff, #f8f9fa);
-            color: #212529;
-        }
+    <link href="assets/css/style.css" rel="stylesheet">
 
-        .glow-text {
-            color: #fff;
-            text-shadow: 0 0 8px #000, 0 0 12px #0ff;
-            transition: text-shadow 0.3s, color 0.3s;
-        }
-
-        body.light-mode .glow-text {
-            color: #0d6efd;
-            text-shadow: none;
-        }
-
-        .portrait-box {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-            max-width: 250px;
-            margin: auto;
-        }
-
-        body.light-mode .portrait-box {
-            box-shadow: 0 0 15px rgba(13, 110, 253, 0.4);
-        }
-
-        .skills-box img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            margin: 10px;
-            transition: transform .2s, box-shadow .3s, background .3s;
-            background: #1e1e1e;
-            padding: 10px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-        }
-
-        body.light-mode .skills-box img {
-            background: #fff;
-            box-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
-        }
-
-        .skills-box img:hover {
-            transform: scale(1.1);
-        }
-
-        section {
-            padding: 80px 0;
-            transition: background 0.3s;
-        }
-
-        .hero-vector {
-            max-width: 400px;
-            opacity: 0.9;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .blurred {
-            filter: blur(8px)
-        }
-
-        .img-box {
-            object-fit: cover;
-            width: 100%;
-            height: 60%;
-        }
-
-        .tags {
-            margin: 12px 0;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #475569;
-            padding: 5px 10px;
-            margin: 4px 4px 0 0;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-    </style>
 </head>
 
 <body>
 
-    <section class="d-flex align-items-center" style="padding-bottom:30px !important; min-height: 90vh !important;">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
-            <div class="row align-items-center">
 
-                <!-- Left (Vector / Portrait) -->
-                <div class="col-md-6 text-center mb-4 mb-md-0">
-                    <img src="lib/imgs/gummy-programming.png" alt="hero vector" class="img-fluid hero-vector">
-                </div>
+            <a class="navbar-brand fw-bold" href="#">
+                RF
+            </a>
 
-                <!-- Right (Intro Text) -->
-                <div class="col-md-6 text-center text-md-start">
-                    <h1 class="display-4 fw-bold glow-text">Hi, I'm Fauzi 👋</h1>
-                    <p class="lead mt-3">
-                        A <strong>Software Developer</strong> passionate about building scalable
-                        and user-friendly applications.
-                        I turn ideas into real, working solutions.
+            <button class="navbar-toggler"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" data-key="about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" data-key="projects">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-key="contact">Contact</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <button class="btn btn-sm btn-outline-primary"
+                                id="languageBtn">
+                            ID
+                        </button>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="container position-relative">
+
+            <div class="row">
+
+                <div class="col-lg-8">
+
+                    <span class="hero-badge">
+                        .NET Developer
+                    </span>
+
+                    <h1 id="heroTitle">
+                        Rachmat Fauzi
+                    </h1>
+
+                    <p id="heroDescription">
+
+                        Building enterprise applications for
+                        Retail, Logistics, Finance and Internal
+                        Business Systems for more than 7 years.
+
                     </p>
+
                     <div class="mt-4">
-                        <a href="#about-me" class="btn btn-outline-light btn-lg">About Me</a>
-                    </div>
-                    <div class="mt-3">
-                        <div class="d-flex flex-wrap justify-content-start skills-box">
-                            <a href="mailto:rfauzi.work@gmail.com">
-                                <img src="lib/imgs/envelope.svg" alt="C#" style="background:#d7d0d0;">
-                            </a>
-                            <a href="https://www.linkedin.com/in/rafa072">
-                                <img src="lib/imgs//linkedin.svg" alt="C#" style="background:#d7d0d0;">
-                            </a>
-                            <a href="https://github.com/rafazie">
-                                <img src="lib/imgs/github.svg" alt="C#" style="background:#d7d0d0;">
-                            </a>
-                        </div>
+
+                        <a href="assets/cv/CV-Rachmat-Fauzi.pdf"
+                           class="btn btn-primary me-2">
+
+                            Download CV
+
+                        </a>
+
+                        <a href="mailto:rfauzi.work@gmail.com"
+                           class="btn btn-outline-light me-2">
+
+                            Email
+
+                        </a>
+
+                        <a href="https://github.com/rafazie"
+                           target="_blank"
+                           class="btn btn-outline-light me-2">
+
+                            Github
+
+                        </a>
+
+                        <a href="https://linkedin.com/in/rafa072"
+                           target="_blank"
+                           class="btn btn-outline-light">
+
+                            LinkedIn
+
+                        </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <!-- ABOUT -->
+
+    <section id="about" class="section">
+
     <div class="container">
-        <main role="main" class="pb-3">
-            <section class="text-center text-md-start mt-5" id="about-me">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <!-- Left (Photo) -->
-                        <div class="col-md-4 mb-4 mb-md-0">
-                            <div class="portrait-box">
-                                <img src="lib/imgs/ME.png" class="img-fluid" alt="portrait">
-                            </div>
-                        </div>
 
-                        <!-- Right (Text) -->
-                        <div class="col-md-8">
-                            <h2 class="glow-text">About Me</h2>
-                            <p class="lead mt-3">
-                                Hi, I’m Fauzi. I’m a passionate <strong>Software Developer</strong> with a focus on
-                                building reliable, user-friendly, and scalable applications. I enjoy turning ideas into
-                                working solutions and always aim to write clean, efficient code.
-                            </p>
-                            <p>
-                                My experience ranges from working with <strong>.NET & Vb .Net</strong> for Desktop App,
-                                and for Web App with <strong>.NET & C#</strong>, to front-end tech like
-                                <strong>JavaScript, Bootstrap, and jQuery</strong>, and handling databases such as
-                                <strong>SQL Server & MySQL</strong>.
-                            </p>
-                            <p>
-                                Outside of coding, I’m always eager to explore new technologies, share knowledge, and
-                                collaborate with people to create something impactful.
-                            </p>
-                        </div>
-                    </div>
+        <div class="row align-items-center gy-5">
+
+            <!-- FOTO -->
+
+            <div class="col-lg-4 text-center">
+
+                <div class="profile-wrapper">
+
+                    <img src="assets/img/profile.png"
+                         alt="Rachmat Fauzi"
+                         class="profile-image">
+
                 </div>
-            </section>
 
-            <!-- Skills -->
-            <section class="bg-dark text-center">
-                <div class="container">
-                    <h2 class="mb-4 glow-text">Skills</h2>
-                    <div class="d-flex flex-wrap justify-content-center skills-box">
-                        <a href="#Vb.Net"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/visualbasic/visualbasic-original.svg"
-                                alt="VB"></a>
-                        <a href="#CSharp"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/csharp/csharp-original.svg"
-                                alt="C#"></a>
-                        <a href="#VisualStudio"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/visualstudio/visualstudio-original.svg"
-                                alt="VS"></a>
-                        <a href="#NetCore"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/dotnetcore/dotnetcore-original.svg"
-                                alt="netcore"></a>
-                        <a href="#Net"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/dot-net/dot-net-original.svg"
-                                alt=".NET"></a>
-                        <a href="#Html"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/html5/html5-original.svg"
-                                alt="Html"></a>
-                        <a href="#Bootstrap"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/bootstrap/bootstrap-original.svg"
-                                alt="Bootstrap"></a>
-                        <a href="#JavaScript"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/javascript/javascript-original.svg"
-                                alt="JS"></a>
-                        <a href="#JQuery"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/jquery/jquery-original.svg"
-                                alt="jQuery"></a>
-                        <a href="#Git"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/git/git-original.svg"
-                                alt="Git"></a>
-                        <a href="#SqlServer"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
-                                alt="Sql"></a>
-                        <a href="#MySql"><img
-                                src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/mysql/mysql-original.svg"
-                                alt="MySQL"></a>
-                    </div>
-                </div>
-            </section>
+            </div>
 
-            <!-- Projects -->
-            <section class="text-center">
-                <div class="container">
-                    <h2 class="mb-4 glow-text">Projects</h2>
-                    <div class="row g-5">
+            <!-- ABOUT -->
 
-                        <div class="col-md-4">
-                            <div class="card bg-dark text-light shadow-lg" style="height: 120%;">
-                                <div class="card-body">
-                                    <img src="lib/imgs/B-POS.png" class="blurred img-box mb-4" alt="Foto Blur" />
-                                    <h5 class="card-title">Bright-POS</h5>
-                                    <p class="card-text">POS Dekstop APP for Convenience Store</p>
+            <div class="col-lg-8">
 
-                                    <div class="tags">
-                                        <span class="tag">Vb .Net</span>
-                                        <span class="tag">Sql Server</span>
-                                        <span class="tag">MySql</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <span class="section-badge">
+                    About Me
+                </span>
 
-                        <div class="col-md-4">
-                            <div class="card bg-dark text-light shadow-lg" style="height: 120%;">
-                                <div class="card-body">
-                                    <img src="lib/imgs/swagger.png" class="blurred img-box mb-4" alt="Foto Blur" />
-                                    <h5 class="card-title">Bright-API</h5>
-                                    <p class="card-text">Web API for inetgration B-POS Dektop to Eksternal Servcie</p>
+                <h2 class="section-title mb-4">
+                    Senior .NET Developer
+                </h2>
 
-                                    <div class="tags">
-                                        <span class="tag">C#</span>
-                                        <span class="tag">Api</span>
-                                        <span class="tag">Sql Server</span>
-                                        <span class="tag">Swagger</span>
-                                        <span class="tag">Html</span>
-                                        <span class="tag">Jquery</span>
-                                        <span class="tag">Bootstrap</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <p class="lead">
 
-                        <div class="col-md-4">
-                            <div class="card bg-dark text-light shadow-lg" style="height: 120%;">
-                                <div class="card-body">
-                                    <img src="lib/imgs/fid.png" class="blurred img-box mb-4" alt="Foto Blur" />
-                                    <h5 class="card-title">Investement Document</h5>
-                                    <p class="card-text">Web App for managing Investment Document</p>
+                    .NET Developer with 7+ years of experience
+                    building enterprise applications in Retail,
+                    Logistics, Finance, and Internal Business Systems.
 
-                                    <div class="tags">
-                                        <span class="tag">C#</span>
-                                        <span class="tag">.Net MVC</span>
-                                        <span class="tag">.Net Core</span>
-                                        <span class="tag">Sql Server</span>
-                                        <span class="tag">Jquery</span>
-                                        <span class="tag">Bootstrap</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                </p>
 
-                        <div class="col-md-4 mb-3">
-                            <input type="search" />
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <input type="search" />
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <input type="search" />
-                        </div>
+                <p>
 
-                        <div class="col-md-4 mt-4">
-                            <div class="card bg-dark text-light shadow-lg" style="height: 120%;">
-                                <div class="card-body">
-                                    <img src="lib/imgs/acs.jpg" class="blurred img-box mb-4" alt="Foto Blur" />
-                                    <h5 class="card-title">Bonded Logistics Center (PLB)</h5>
-                                    <p class="card-text">Web App for manage customs documentation</p>
+                    Specialized in ASP.NET Core, C#, SQL Server,
+                    REST API Integration, MongoDB, and Enterprise
+                    Application Development.
 
-                                    <div class="tags">
-                                        <span class="tag">C#</span>
-                                        <span class="tag">.Net MVC</span>
-                                        <span class="tag">.Net Core</span>
-                                        <span class="tag">Sql Server</span>
-                                        <span class="tag">Jquery</span>
-                                        <span class="tag">Bootstrap</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                </p>
 
-                        <div class="col-md-4 mt-4">
-                            <div class="card bg-dark text-light shadow-lg" style="height: 120%;">
-                                <div class="card-body">
-                                    <img src="lib/imgs/ahs.jpg" class="blurred img-box mb-4" alt="Foto Blur" />
-                                    <h5 class="card-title">Unit Price Analysis (AHS)</h5>
-                                    <p class="card-text">Web App for calculate the cost of a specific job or service
-                                        based on its components</p>
+                <div class="row mt-4">
 
-                                    <div class="tags">
-                                        <span class="tag">C#</span>
-                                        <span class="tag">.Net MVC</span>
-                                        <span class="tag">.Net Core</span>
-                                        <span class="tag">Sql Server</span>
-                                        <span class="tag">Jquery</span>
-                                        <span class="tag">Bootstrap</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-4">
 
-                        <div class="col-md-4 mt-4">
-                            <div class="card bg-dark text-light shadow-lg" style="height: 120%;">
-                                <div class="card-body">
-                                    <img src="lib/imgs/itsm.png" class="blurred img-box mb-4" alt="Foto Blur" />
-                                    <h5 class="card-title">IT Support Ticketing System</h5>
-                                    <p class="card-text">Web App for IT Support Ticketing System to log, track, and
-                                        resolve user issues</p>
+                        <div class="stat-card">
 
-                                    <div class="tags">
-                                        <span class="tag">C#</span>
-                                        <span class="tag">.Net MVC</span>
-                                        <span class="tag">.Net Core</span>
-                                        <span class="tag">Sql Server</span>
-                                        <span class="tag">Jquery</span>
-                                        <span class="tag">Bootstrap</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3>7+</h3>
+                            <span>Years Experience</span>
+
                         </div>
 
                     </div>
+
+                    <div class="col-md-4">
+
+                        <div class="stat-card">
+
+                            <h3>4+</h3>
+                            <span>Industries</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="stat-card">
+
+                            <h3>10+</h3>
+                            <span>Enterprise Projects</span>
+
+                        </div>
+
+                    </div>
+
                 </div>
-            </section>
-        </main>
+
+            </div>
+
+        </div>
+
     </div>
+
+</section>
+
+    <!-- WHAT I BUILD -->
+
+    <section class="section bg-soft">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                What I Build
+            </h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="custom-card">Retail POS Systems</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="custom-card">Logistics Platforms</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="custom-card">Financial Dashboards</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="custom-card">Internal Enterprise Systems</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="custom-card">REST API Integration</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="custom-card">Reporting & Analytics</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects" class="section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Featured Projects
+            </h2>
+
+            <div class="row g-4">
+
+                <div class="col-lg-6">
+
+                    <div class="project-card">
+
+                        <img src="assets/img/project-pos.png">
+
+                        <div class="p-4">
+
+                            <h4>Bright POS</h4>
+
+                            <p>
+                                Enterprise Retail Point of Sales System.
+                            </p>
+
+                            <div class="tech-stack">
+                                VB.NET • SQL Server • REST API
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="project-card">
+
+                        <img src="assets/img/project-ticketing.png">
+
+                        <div class="p-4">
+
+                            <h4>P-Serv</h4>
+
+                            <p>
+                                IT Service Management & Ticketing Platform.
+                            </p>
+
+                            <div class="tech-stack">
+                                ASP.NET Core • EF Core • SQL Server
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TECH STACK -->
+
+    <section class="section bg-soft">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Tech Stack
+            </h2>
+
+            <div class="stack-container">
+
+                <span>C#</span>
+                <span>VB .NET</span>
+                <span>ASP.NET Core</span>
+                <span>SQL Server</span>
+                <span>MongoDB</span>
+                <span>Blazor</span>
+                <span>Quartz.NET</span>
+                <span>REST API</span>
+                <span>Azure</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TIMELINE -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Career Journey
+            </h2>
+
+            <div class="timeline">
+
+                <div>2019 - Global Service Indonesia</div>
+                <div>2021 - Indocyber Global Technology</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="section">
+
+        <div class="container text-center">
+
+            <h2 class="section-title">
+                Let's Connect
+            </h2>
+
+            <p>
+                rfauzi.work@gmail.com
+            </p>
+
+        </div>
+
+    </section>
 
     <footer class="footer my-4">
         <div class="container">
@@ -372,43 +404,10 @@
         </div>
     </footer>
 
-    <script>
-        $(document).ready(function () {
-            $('#toggleTheme').click(function () {
-                $('body').toggleClass('light-mode');
-                if ($('body').hasClass('light-mode')) {
-                    $(this).text('🌞 Light');
-                    $(this).removeClass('btn-outline-info').addClass('btn-outline-dark');
-                } else {
-                    $(this).text('🌙 Dark');
-                    $(this).removeClass('btn-outline-dark').addClass('btn-outline-info');
-                }
-            });
-        });
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-        function perbaruiWaktu() {
-            // 1. Ambil data waktu saat ini dari perangkat pengguna
-            const sekarang = new Date();
+    <script src="assets/js/app.js"></script>
 
-            // 2. Format tanggal dan waktu ke bahasa Indonesia
-            const opsiFormat = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-            };
-            const waktuLokal = sekarang.toLocaleDateString('id-ID', opsiFormat);
-
-            // 3. Masukkan hasil format ke dalam elemen HTML
-            document.getElementById('waktu-sekarang').textContent = waktuLokal;
-        }
-
-        // Jalankan fungsi pertama kali saat halaman dimuat
-        perbaruiWaktu();
-
-        // Perbarui waktu setiap 1000 milidetik (1 detik) secara otomatis
-        setInterval(perbaruiWaktu, 1000);
-    </script>
 </body>
 
 </html>
