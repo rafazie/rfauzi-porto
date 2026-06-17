@@ -142,3 +142,157 @@ body {
 
     font-size: .9rem;
 }
+
+.image-preview {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.95);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .25s ease;
+
+    z-index: 9999;
+}
+
+.image-preview.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-preview img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+
+    transform: scale(.9);
+    opacity: 0;
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+}
+
+.image-preview.show img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.15);
+    color: white;
+
+    font-size: 32px;
+    line-height: 1;
+
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.close-btn:hover {
+    background: rgba(255,255,255,.3);
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255,255,255,.15);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,.3);
+}
+
+.preview-img {
+    cursor: zoom-in;
+    transition: transform .2s ease;
+}
+
+.preview-img:hover {
+    transform: scale(1.02);
+}
+
+.image-preview {
+    backdrop-filter: blur(5px);
+}
+
+.preview-enter-right {
+    animation: slideFromRight .25s ease;
+}
+
+.preview-enter-left {
+    animation: slideFromLeft .25s ease;
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
